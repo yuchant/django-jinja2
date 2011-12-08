@@ -62,7 +62,7 @@ def setup_defaults():
 
     # can be a function which accepts a template name / template dirs
     # one could potentially read the file and ensure there's a flag or certain pattern at the start of file, etc.
-    JINJA2_ENGINE_CONDITION = lambda x: 'jinja' in os.path.basename(x).split('.')
+    JINJA2_ENGINE_CONDITION = lambda template_path: 'jinja' in os.path.basename(template_path).split('.')
 
     # the files accessible to these django template loaders are pulled into the jinja environment
     JINJA2_TEMPLATE_LOADERS = settings.TEMPLATE_LOADERS
