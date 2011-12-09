@@ -12,10 +12,6 @@ from . import jinja2_settings
 
 import jinja2
 
-class Settings(object):
-    FOO = 'bar'
-settings = Settings()
-
 
 def setup_jinja_environment():
     """
