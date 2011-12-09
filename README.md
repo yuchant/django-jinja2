@@ -2,7 +2,7 @@
 Introduction
 ============
 
-This is an easy drop in solution for conditionally rendering jinja2 templates while defaulting to the django template engine.
+This is an easy drop in solution for conditionally and seamlessly rendering jinja2 templates (with their context) while defaulting to the django template engine.
 
 By default, if a filename contains a ``.jinja`` (or ``foo.jinja.html``) extension, the template will be rendered via jinja2. 
 
