@@ -45,7 +45,7 @@ class Jinja2UndefinedClass(jinja2.Undefined):
     def __getitem__(self):
         return self.self
 
-    def self(_self):
+    def self(_self, *args, **kwargs):
         return _self
 
 
