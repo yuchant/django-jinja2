@@ -65,6 +65,9 @@ The default settings can be overridden via your django site settings.
     JINJA2_ENVIRONMENT_KWARGS = {}
     # kwargs passed to Jinja.Environment function (filters={})
 
+    JINJA2_ENVIRONMENT_ATTRS = {}
+    # attributes set on environemnt object (such as for filter init)
+
     # can be a function which accepts a template name / template dirs
     # one could potentially read the file and ensure there's a flag or certain pattern at the start of file, etc.
     JINJA2_ENGINE_CONDITION = lambda template_path: 'jinja' in os.path.basename(template_path).split('.')

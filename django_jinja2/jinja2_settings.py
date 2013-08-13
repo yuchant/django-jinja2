@@ -32,7 +32,6 @@ class Jinja2UndefinedClass(jinja2.Undefined):
     def __init__(self, *args, **kwargs):
         print args, kwargs
     
-
     def __str__(self):
         return ''
 
@@ -45,9 +44,8 @@ class Jinja2UndefinedClass(jinja2.Undefined):
     def __getitem__(self):
         return self.self
 
-    def self(_self, *args, **kwargs):
+    def self(_self):
         return _self
-
 
 
 def setup_defaults():
@@ -59,6 +57,11 @@ def setup_defaults():
     }
 
     JINJA2_EXTENSIONS = []
+    JINJA2_ENVIRONMENT_KWARGS = {}
+    # kwargs passed to Jinja.Environment function
+
+    JINJA2_ENVIRONMENT_ATTRS = {}
+    # attributes set on jinja environment such as environment.filters = {}
 
     # can be a function which accepts a template name / template dirs
     # one could potentially read the file and ensure there's a flag or certain pattern at the start of file, etc.
