@@ -15,7 +15,7 @@ import jinja2
 
 def setup_jinja_environment():
     """
-    Load jinja environment based on active django template loaders or 
+    Load jinja environment based on active django template loaders or
     settings.JINJA2_TEMPLATE_LOADERS override.
 
     Populate jinja global context with settings.JINJA2_GLOBAL_CONTEXT
@@ -25,13 +25,12 @@ def setup_jinja_environment():
     for loader_string in jinja2_settings.JINJA2_TEMPLATE_LOADERS:
         [template_dirs.append(x) for x in loader.find_template_loader(loader_string).get_template_sources('')]
 
-
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(template_dirs),
         extensions=jinja2_settings.JINJA2_EXTENSIONS,
         undefined=jinja2_settings.JINJA2_UNDEFINED_CLASS,
-        # **jinja2_settings.JINJA2_ENVIRONMENT_KWARGS,
-        )
+        **jinja2_settings.JINJA2_ENVIRONMENT_KWARGS,
+    )
     env.template_class = jinja2_settings.Jinja2DjangoTemplate
 
     jinja_context = jinja2_settings.JINJA2_GLOBAL_CONTEXT

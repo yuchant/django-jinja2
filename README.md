@@ -62,6 +62,8 @@ The default settings can be overridden via your django site settings.
     }
 
     JINJA2_EXTENSIONS = []
+    JINJA2_ENVIRONMENT_KWARGS = {}
+    # kwargs passed to Jinja.Environment function (filters={})
 
     # can be a function which accepts a template name / template dirs
     # one could potentially read the file and ensure there's a flag or certain pattern at the start of file, etc.
